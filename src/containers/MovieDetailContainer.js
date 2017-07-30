@@ -47,7 +47,7 @@ export default class MovieDetailContainer extends React.Component {
         )
     }
 
-    // 渲染电影详情数据(直接渲染子组件就额可以了,不用再循环渲染了)
+    // 渲染电影详情数据
     renderMovieDetail = ()=> {    
         return (
             <div className="movieDetail_container">
