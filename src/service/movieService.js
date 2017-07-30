@@ -923,7 +923,7 @@ export default {
           title: "正在上映的电影-北京"
         };
         resolve(data);
-      }, 3000);
+      }, 1000);
 
       //调用ES6的分fetch方法(真实数据请求)
       // fetch(url)
