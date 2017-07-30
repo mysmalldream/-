@@ -24,13 +24,14 @@ export default class Routers extends React.Component {
         return (
             <Router history={browserHistory}>
                 <Route path="/" component={AppContainer}>
-                    <IndexRoute component={HomeContainer}/>
+                    <IndexRoute component={HomeContainer}/>   {/*默认首页初始化*/}
                     <Route path="home" component={HomeContainer} />
                     <Route path="movie"
                            component={MovieContainer}
-                           onEnter={()=>console.log('进入了movie路由')}
+                           onEnter={()=>console.log('1进入了movie路由')}
                            onLeave={()=>console.log('离开了movie路由')}
                     >
+                        <IndexRoute component={MovieListContainer}/>   {/*默认电影页初始化*/}
                         {/*绝对路由*/}
                         <Route path="movieList" component={MovieListContainer} />
                         <Route path="movieDetail" component={MovieDetailContainer} />

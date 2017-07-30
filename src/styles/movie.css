@@ -39,10 +39,16 @@
 .movie_search input{
    width: 75%;
     border-radius: 50px 0 0 50px;
-    text-indent: .5em;
+    text-indent: 0.5em;
+     height: 19px; 
+}
+.movie_search button{
+    width: 15%;
+    border-radius: 0 50px 50px 0;
+    text-align: center;
 }
 
 .movie_content{
     flex: 1;
-    background-color: yellow;
+    background-color: pink;
 }

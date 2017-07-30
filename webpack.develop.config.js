@@ -61,7 +61,7 @@ module.exports = {
         contentBase: __dirname + '/src',
         hot: true,
         inline:true, // 默认是true
-        port:8080,
+        port:8091,
         host: 'localhost',
         historyApiFallback: true,
         noInfo: false,
@@ -70,7 +70,7 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new OpenBrowserPlugin({url: 'http://localhost:8080/', browser: 'chrome'})
+        new OpenBrowserPlugin({url: 'http://localhost:8091/', browser: 'chrome'})
     ]
 
 }

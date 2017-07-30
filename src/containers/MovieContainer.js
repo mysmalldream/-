@@ -26,7 +26,7 @@ export default class MovieContainer extends React.Component {
                        <button>搜索</button>
                    </div>
                    <div className="movie_content">
-                       {this.props.children}
+                       {this.props.children}   {/*占位符*/}
                    </div>
                </div>
            </div>
