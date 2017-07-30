@@ -12,10 +12,12 @@ export default class MovieDetailContainer extends React.Component {
     super(props);
     this.state = {
       isLoading: true, //是否显示遮罩
-      movieListData: []
+      movieListData: []   //数组
     };
   }
-
+   static contextTypes={
+        router:React.PropTypes.object   //上下文属性的校验(静态属性)
+    }
   componentDidMount() {
     //组件已经渲染 (生命周期)
     this.fetch(); //在生命周期的渲染后调用返回来的数据
@@ -50,7 +52,7 @@ export default class MovieDetailContainer extends React.Component {
   renderLoading = () => {
     return <div>电影详细数据正在加载,请稍后... ... ...</div>;
   };
-
+    
   
   //返回的实际电影列表渲染数据    (循环渲染子组件,相当于for循环)
   renderMovieList = () => { 
@@ -60,10 +62,11 @@ export default class MovieDetailContainer extends React.Component {
       </div>
     );
   };
+
   //渲染每一条数据
   renderItem = (item) => {
     return (
-      <div  className="movieList_item"  key={item.id}>    {/*//唯一的id值*/}
+      <div  className="movieList_item"  key={item.id} onClick={()=>this.goDetail(item.id)}>    {/*//唯一的id值,跳转传递的id值*/}
         <img src={item.images.small} alt=""/>
         <div>
             <h1>{item.title}</h1>
@@ -74,7 +77,10 @@ export default class MovieDetailContainer extends React.Component {
     )
   };
 
-
+    // 跳转到详细页面(MovieDetailContainer)
+    goDetail=(id)=>{
+        this.context.router.push(`/movie/movieDetail/${id}`)   //{/*用了ES6模板字符串*/}
+    }
 
   render() {
     if (this.state.isLoading) {

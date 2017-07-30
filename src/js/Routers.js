@@ -34,7 +34,7 @@ export default class Routers extends React.Component {
                         <IndexRoute component={MovieListContainer}/>   {/*默认电影页初始化*/}
                         {/*绝对路由*/}
                         <Route path="movieList" component={MovieListContainer} />
-                        <Route path="movieDetail" component={MovieDetailContainer} />
+                        <Route path="movieDetail/:id" component={MovieDetailContainer} />
                         <Route path="movieSearch" component={MovieSearchContainer} />
                         {/*<Redirect from="movieList" to="/movieList" />*/}
                         {/*<Redirect from="movieDetail" to="/movieDetail" />*/}
