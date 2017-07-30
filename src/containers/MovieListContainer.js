@@ -3,6 +3,9 @@
  * */
 import React from "react";
 import service from "../service/movieService"; //引入自己服务器上的数据
+import '../styles/movieList.css'    //电影列表页样式
+
+
 
 export default class MovieDetailContainer extends React.Component {
   constructor(props) {
@@ -49,10 +52,10 @@ export default class MovieDetailContainer extends React.Component {
   };
 
   
-  //返回的实际渲染数据    (循环渲染子组件)
-  renderMovieList = () => {
+  //返回的实际电影列表渲染数据    (循环渲染子组件,相当于for循环)
+  renderMovieList = () => { 
     return (
-      <div >
+      <div className="movieList_container">
         {this.state.movieListData.map(this.renderItem)}
       </div>
     );
@@ -60,11 +63,12 @@ export default class MovieDetailContainer extends React.Component {
   //渲染每一条数据
   renderItem = (item) => {
     return (
-      <div key={item.id}>    //唯一的id值
+      <div  className="movieList_item"  key={item.id}>    {/*//唯一的id值*/}
         <img src={item.images.small} alt=""/>
         <div>
             <h1>{item.title}</h1>
-            <span>{item.year}</span>
+            <span>年代:{item.year}</span>
+            <p>类型:{item.genres}</p>
         </div>
       </div>
     )
